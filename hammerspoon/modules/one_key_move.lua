@@ -5,6 +5,7 @@ local module = {}
 
 local isMoveEnable = false
 local currentHotkey = nil
+local oneKeyMoveMenubar = nil
 
 function module.getDestPath()
     local configFile = os.getenv("HOME") .. "/.one_key_move"
@@ -55,7 +56,6 @@ function module.hasSelected()
 end
 
 function module.move(destPath)
-
     if not module.isFinderFocused() then
         hs.alert.show("当前的焦点窗口不是访达")
         return
@@ -104,14 +104,27 @@ function module.enableMove()
     local keys = require("modules.keys")
     currentHotkey = hs.hotkey.bind(keys.hyper, "m", function() module.move(destPath) end)
 
+    if not oneKeyMoveMenubar then
+        --创建状态栏对象
+        oneKeyMoveMenubar = hs.menubar.new()
+        oneKeyMoveMenubar:setTitle("OKM")
+    end
+
     return true
 end
 
 function module.disableMove()
     isMoveEnable = false
+
     if currentHotkey then
         currentHotkey:delete()
     end
+
+    if oneKeyMoveMenubar then
+        oneKeyMoveMenubar:delete()
+        oneKeyMoveMenubar = nil
+    end
+
     hs.alert.show("一键移动模式已退出")
 end
 
@@ -126,6 +139,7 @@ function module.toggleMove()
     end
 end
 
+--该函数只会在Hammerspoon启动时执行一次,而不会在每次切换模式时执行
 function module.start()
     hs.hotkey.bind({ "cmd", "shift" }, "1", module.toggleMove)
 end
