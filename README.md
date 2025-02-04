@@ -39,6 +39,9 @@ cmd + shift + 0:启动kacha
 ### [memo.lua](hammerspoon/modules/memo.lua):<br>
 当"备忘录"是焦点的时候,自动绑定ESC->cmd + shift + e:高亮标记被选中的文本
 
+### [mouse_lock.lua](hammerspoon/modules/mouse_lock.lua):<br>
+ctrl + cmd + shift + m:锁定/解锁鼠标指针的位置
+
 ### [one_key_move.lua](hammerspoon/modules/one_key_move.lua):<br>
 cmd + shift + 1:启动/关闭一键移动模式:<br>
 hyper + m:移动访达中被选中的文件到某个指定的目录
