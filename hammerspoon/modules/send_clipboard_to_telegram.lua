@@ -1,5 +1,5 @@
---ctrl + option + cmd + t:启动/关闭发送剪贴板至电报模式
---space:发送剪贴板内容至电报的某个chat
+--ctrl + option + cmd + t:启动/关闭发送选中的文本至电报模式
+--space:发送选中的文本至电报的某个chat
 
 local module = {}
 
@@ -29,6 +29,10 @@ function module.getChatName()
 end
 
 function module.sendByBashScript(name)
+    --auto copy
+    --注意:不能在bash脚本里面通过osascript来模拟cmd+c,因为bash脚本是通过hammerspoon来调用的
+    hs.eventtap.keyStroke({"cmd"}, "c")
+
     local function completionCallback(exitCode, stdOut, stdErr)
         hs.printf("Task completed with exit code: %s", exitCode or "nil")
         hs.printf("Full stdout:\n%s", stdOut)
@@ -54,7 +58,7 @@ function module.sendByBashScript(name)
 end
 
 function module.enableSend()
-    hs.alert.show("发送剪贴板至电报模式已启动")
+    hs.alert.show("发送至电报模式已启动")
 
     isSendEnable = true
 
@@ -87,7 +91,7 @@ function module.disableSend()
         oneKeySendMenubar = nil
     end
 
-    hs.alert.show("发送剪贴板至电报模式已退出")
+    hs.alert.show("发送至电报模式已退出")
 end
 
 function module.toggleSend()

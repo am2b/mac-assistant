@@ -50,7 +50,7 @@ hyper + m:移动访达中被选中的文件到某个指定的目录
 ctro + option + cmd + r:重新载入Hammerspoon的配置文件
 
 ### [send_clipboard_to_telegram.lua](hammerspoon/modules/send_clipboard_to_telegram.lua):<br>
-发送剪贴板内容至电报的某个chat
+发送选中的文本至电报的某个chat
 
 ### [send_mail.lua](hammerspoon/modules/send_mail.lua):<br>
 通过命令行/bash脚本/客户端来发送邮件
