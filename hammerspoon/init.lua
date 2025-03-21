@@ -21,6 +21,9 @@ clipboard_stack.start()
 
 require("modules.clipboard_history")
 
+local send_clipboard_to_telegram = require("modules.send_clipboard_to_telegram")
+send_clipboard_to_telegram.start()
+
 local finder_trash = require("modules.finder")
 finder_trash.start()
 
