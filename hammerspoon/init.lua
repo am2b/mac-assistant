@@ -1,6 +1,11 @@
 --enable IPC
 hs.ipc.cliInstall()
 
+GLOBAL_FLAG = "init"
+
+local switch = require("modules.switch")
+switch.start()
+
 local keyboard_battery = require("modules.keyboard_battery")
 keyboard_battery.start()
 
