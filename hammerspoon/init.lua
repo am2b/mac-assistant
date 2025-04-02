@@ -1,3 +1,6 @@
+--enable IPC
+hs.ipc.cliInstall()
+
 local keyboard_battery = require("modules.keyboard_battery")
 keyboard_battery.start()
 
