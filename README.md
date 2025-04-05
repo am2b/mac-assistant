@@ -14,6 +14,9 @@ cmd + shift + v:打开剪贴板历史记录的面板
 cmd + shift + p:启动/关闭剪贴板堆栈模式:<br>
 hyper + v:粘贴剪贴板内容并退出剪贴板堆栈模式
 
+### [create_txt_file.lua](hammerspoon/modules/create_txt_file.lua):<br>
+cmd + shift + t:在当前访达目录下新建一个文本文件:<br>
+
 ### [desktop_show.lua](hammerspoon/modules/desktop_show.lua):<br>
 ctrl + option + cmd + d:显示桌面
 
