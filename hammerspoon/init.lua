@@ -53,5 +53,8 @@ chatgpt.start()
 local create_txt = require("modules.create_txt_file")
 create_txt.start()
 
+local hotkeys = require("modules.hotkeys")
+hotkeys.start()
+
 local self = require("modules.self")
 self.start()
