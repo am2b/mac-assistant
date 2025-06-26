@@ -1,4 +1,4 @@
---检测到ctrl + option + cmd + h后,开启/关闭对"标记文件"的扫描
+--检测到ctrl + option + cmd + h后,开启/关闭对"全局变量:GLOBAL_FLAG"的检测
 
 local M = {}
 
