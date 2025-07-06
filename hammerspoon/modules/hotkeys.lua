@@ -67,7 +67,7 @@ end
 
 local function hotKeySpecial(appName, key)
     if key == "3" then
-        if appName == "microsoft_outlook" or appName == "mailmaster" or appName == "mail" then
+        if appName == "microsoft_outlook" or appName == "网易邮箱大师" or appName == "邮件" then
             copyImage()
             return true
         end
