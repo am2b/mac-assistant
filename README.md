@@ -26,6 +26,9 @@ ctrl + option + cmd + d:显示桌面
 ### [finder.lua](hammerspoon/modules/finder.lua):<br>
 ctrl + delete:清空废纸篓
 
+### [hotkeys.lua](hammerspoon/modules/hotkeys.lua):<br>
+绑定同一个ctrl + option + cmd + hotkey到多个apps,然后在不同的app下执行不同的脚本
+
 ### [input_switch.lua](hammerspoon/modules/input_switch.lua):<br>
 根据不同的App自动切换输入法
 
