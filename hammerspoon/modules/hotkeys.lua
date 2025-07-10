@@ -26,7 +26,18 @@ local function hotKey(key)
         function(exitCode, stdOut, stdErr)
             if exitCode == 0 then
                 --hs.alert.show("脚本执行成功")
-                hs.eventtap.keyStroke({"cmd"}, "v", 0)
+                --去除字符串首尾的空白字符
+                --(.-):捕获一个尽可能短的子串(非贪婪匹配)
+                local message = stdOut:gsub("^%s*(.-)%s*$", "%1")
+                --hs.alert.show(result)
+                if message == "cmd v" then
+                    hs.eventtap.keyStroke({ "cmd" }, "v", 0)
+                elseif message == "cmd v+enter" then
+                    hs.eventtap.keyStroke({ "cmd" }, "v", 0)
+                    hs.timer.doAfter(0.2, function()
+                        hs.eventtap.keyStroke({}, "return", 0)
+                    end)
+                end
             else
                 hs.alert.show("发生了错误")
             end
