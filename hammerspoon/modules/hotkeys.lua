@@ -18,74 +18,19 @@ local function getFrontAppName()
     return name
 end
 
-local function resolve_symlink(path)
-    local handle = io.popen("realpath " .. string.format("%q", path))
-    local result = handle:read("*a")
-    handle:close()
-    return result:gsub("\n$", "")
-end
-
-local function copyImage()
-    local envs = require("modules.envs")
-    local dir = resolve_symlink(envs.home .. "/.local/share/mail-helper/images")
-
-    local files = {}
-    for file in hs.fs.dir(dir) do
-        local fullpath = dir .. "/" .. file
-        if hs.fs.attributes(fullpath, "mode") == "file" then
-            table.insert(files, fullpath)
-        end
-    end
-
-    if #files == 0 then
-        hs.alert.show("No images found!")
-        return
-    end
-
-    -- 随机选择一个图片
-    math.randomseed(os.time())
-    local index = math.random(1, #files)
-    local chosen_file = files[index]
-
-    --hs.alert.show(chosen_file)
-
-    local task = hs.task.new(envs.home .. "/.local/bin/go-tools/copy_image", function(exitCode, stdOut, stdErr)
-        if exitCode == 0 then
-            hs.alert.show("图片复制成功")
-
-            -- 删除该文件
-            os.remove(chosen_file)
-        else
-            hs.alert.show("复制失败:" .. stdErr)
-        end
-    end, { chosen_file })
-
-    if not task:start() then
-        hs.alert.show("无法启动copy_image命令")
-    end
-end
-
-local function hotKeySpecial(appName, key)
-    if key == "3" then
-        if appName == "microsoft_outlook" or appName == "网易邮箱大师" or appName == "邮件" then
-            copyImage()
-            return true
-        end
-    end
-
-    return false
-end
-
 local function hotKey(key)
     local appName = getFrontAppName()
 
-    local ret = hotKeySpecial(appName, key)
-    if ret == true then
-        return
-    end
-
     local envs = require("modules.envs")
-    local task = hs.task.new("/opt/homebrew/bin/bash", nil,
+    local task = hs.task.new("/opt/homebrew/bin/bash",
+        function(exitCode, stdOut, stdErr)
+            if exitCode == 0 then
+                --hs.alert.show("脚本执行成功")
+                hs.eventtap.keyStroke({"cmd"}, "v", 0)
+            else
+                hs.alert.show("发生了错误")
+            end
+        end,
         {
             "-c",
             "export PATH=/opt/homebrew/bin:$PATH; " ..
