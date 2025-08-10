@@ -51,5 +51,8 @@ create_txt.start()
 local hotkeys = require("modules.hotkeys")
 hotkeys.start()
 
+local right_mouse_button_simulates_space = require("modules.right_mouse_button_simulates_space")
+right_mouse_button_simulates_space.start()
+
 local self = require("modules.self")
 self.start()
