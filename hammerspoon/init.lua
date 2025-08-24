@@ -54,5 +54,8 @@ hotkeys.start()
 local right_mouse_button_simulates_space = require("modules.right_mouse_button_simulates_space")
 right_mouse_button_simulates_space.start()
 
+local browse_pictures = require("modules.browse_pictures")
+browse_pictures.start()
+
 local self = require("modules.self")
 self.start()
