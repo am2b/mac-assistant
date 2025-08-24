@@ -3,6 +3,9 @@
 截图,然后不仅存储到硬盘上,同时也存储到剪贴板上
 
 ## hammerspoon:
+### [browse_pictures.lua](hammerspoon/modules/browse_pictures.lua):<br>
+通过检测约定目录下的约定好名字的文件是否存在来激活或关闭:在访达中浏览图片时left/right按键可以copy图片到指定的目录
+
 ### [chatgpt.lua](hammerspoon/modules/chatgpt.lua):<br>
 刷新chatGPT的网页
 
@@ -51,6 +54,9 @@ ctrl + cmd + shift + m:锁定/解锁鼠标指针的位置
 ### [one_key_move.lua](hammerspoon/modules/one_key_move.lua):<br>
 cmd + shift + 1:启动/关闭一键移动模式:<br>
 hyper + m:移动访达中被选中的文件到某个指定的目录
+
+### [right_mouse_button_simulates_space.lua](hammerspoon/modules/right_mouse_button_simulates_space.lua):<br>
+通过检测约定目录下的约定好名字的文件是否存在来激活或关闭"单击鼠标右键来模拟空格键"的功能
 
 ### [self.lua](hammerspoon/modules/self.lua):<br>
 ctro + option + cmd + r:重新载入Hammerspoon的配置文件
