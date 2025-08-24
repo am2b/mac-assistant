@@ -67,8 +67,8 @@ local function getFilenameFromPath(path)
 end
 
 --检查文件是否存在
-local function fileExists()
-    return hs.fs.attributes(flagFile) ~= nil
+local function fileExists(file)
+    return hs.fs.attributes(file) ~= nil
 end
 
 --获取访达中选中的那个文件
@@ -144,7 +144,7 @@ end
 
 --根据flagFile是否存在来绑定/解绑按键
 local function refreshBindings()
-    if fileExists() then
+    if fileExists(flagFile) then
         bindKeys()
     else
         unbindKeys()
