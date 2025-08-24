@@ -61,8 +61,13 @@ local function createDirectoryIfNeeded(dirPath)
     return true
 end
 
+--从一个路径中抽取出文件名
+local function getFilenameFromPath(path)
+    return path:match("^.+/(.+)$")
+end
+
 --检查文件是否存在
-local function flagFileExists()
+local function fileExists()
     return hs.fs.attributes(flagFile) ~= nil
 end
 
@@ -91,6 +96,14 @@ local function getSelectedFile()
 end
 
 local function copyToTarget(path)
+    --检查目标目录下是否存在同名的文件
+    local pictureName = getFilenameFromPath(path)
+    local destPictureName = targetDir .. "/" .. pictureName
+    if fileExists(destPictureName) then
+        hs.alert.show("目标目录下存在同名文件:" .. pictureName)
+        return
+    end
+
     if path then
         os.execute(string.format('cp "%s" "%s/"', path, targetDir))
     end
@@ -131,7 +144,7 @@ end
 
 --根据flagFile是否存在来绑定/解绑按键
 local function refreshBindings()
-    if flagFileExists() then
+    if fileExists() then
         bindKeys()
     else
         unbindKeys()
