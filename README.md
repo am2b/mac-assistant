@@ -55,6 +55,9 @@ ctrl + cmd + shift + m:锁定/解锁鼠标指针的位置
 cmd + shift + 1:启动/关闭一键移动模式:<br>
 hyper + m:移动访达中被选中的文件到某个指定的目录
 
+### [right_mouse_button_simulates_right.lua](hammerspoon/modules/right_mouse_button_simulates_right.lua):<br>
+通过检测约定目录下的约定好名字的文件是否存在来激活或关闭"单击鼠标右键来模拟right键"的功能
+
 ### [right_mouse_button_simulates_space.lua](hammerspoon/modules/right_mouse_button_simulates_space.lua):<br>
 通过检测约定目录下的约定好名字的文件是否存在来激活或关闭"单击鼠标右键来模拟空格键"的功能
 
