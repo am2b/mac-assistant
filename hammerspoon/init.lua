@@ -33,9 +33,8 @@ clipboard_stack.start()
 --local one_key_move = require("modules.one_key_move")
 --one_key_move.start()
 
---kacha
-local launch = require("modules.launch")
-launch.start()
+--local launch = require("modules.launch")
+--launch.start()
 
 local memo = require("modules.memo")
 memo.start()

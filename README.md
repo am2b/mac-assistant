@@ -1,7 +1,4 @@
 ## applescript:
-### [kacha.applescript](applescripts/kacha.applescript):<br>
-截图,然后不仅存储到硬盘上,同时也存储到剪贴板上
-
 ## hammerspoon:
 ### [browse_pictures.lua](hammerspoon/modules/browse_pictures.lua):<br>
 通过检测约定目录下的约定好名字的文件是否存在来激活或关闭:在访达中浏览图片时left/right按键可以copy图片到指定的目录
@@ -40,10 +37,6 @@ ctrl + delete:清空废纸篓
 
 ### [keys.lua](hammerspoon/modules/keys.lua):<br>
 定义组合按键
-
-### [launch.lua](hammerspoon/modules/launch.lua):<br>
-启动App:<br>
-cmd + shift + 0:启动kacha
 
 ### [memo.lua](hammerspoon/modules/memo.lua):<br>
 当"备忘录"是焦点的时候,自动绑定ESC->cmd + shift + e:高亮标记被选中的文本
