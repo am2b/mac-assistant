@@ -13,9 +13,6 @@ window_expand.start()
 local window_move = require("modules.window_move")
 window_move.start()
 
---local window_focus_next = require("modules.window_focus_next")
---window_focus_next.start()
-
 --local desktop_show = require("modules.desktop_show")
 --desktop_show.start()
 
