@@ -1,6 +1,9 @@
 --enable IPC
 hs.ipc.cliInstall()
 
+local self = require("modules.self")
+self.start()
+
 local keyboard_battery = require("modules.keyboard_battery")
 keyboard_battery.start()
 
@@ -28,6 +31,8 @@ create_txt.start()
 local hotkeys = require("modules.hotkeys")
 hotkeys.start()
 
+require("modules.caps_lock")
+
 --require("modules.clipboard_history")
 
 --local send_clipboard_to_telegram = require("modules.send_clipboard_to_telegram")
@@ -47,6 +52,3 @@ hotkeys.start()
 
 --local browse_pictures = require("modules.browse_pictures")
 --browse_pictures.start()
-
--- local self = require("modules.self")
--- self.start()
