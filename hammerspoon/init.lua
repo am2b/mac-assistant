@@ -33,6 +33,8 @@ hotkeys.start()
 
 require("modules.caps_lock")
 
+require("modules.image_viewer")
+
 --require("modules.clipboard_history")
 
 --local send_clipboard_to_telegram = require("modules.send_clipboard_to_telegram")
