@@ -16,17 +16,6 @@ window_move.start()
 local clipboard_stack = require("modules.clipboard_stack")
 clipboard_stack.start()
 
---require("modules.clipboard_history")
-
---local send_clipboard_to_telegram = require("modules.send_clipboard_to_telegram")
---send_clipboard_to_telegram.start()
-
---local one_key_move = require("modules.one_key_move")
---one_key_move.start()
-
---local launch = require("modules.launch")
---launch.start()
-
 local memo = require("modules.memo")
 memo.start()
 
@@ -39,6 +28,17 @@ create_txt.start()
 local hotkeys = require("modules.hotkeys")
 hotkeys.start()
 
+--require("modules.clipboard_history")
+
+--local send_clipboard_to_telegram = require("modules.send_clipboard_to_telegram")
+--send_clipboard_to_telegram.start()
+
+--local one_key_move = require("modules.one_key_move")
+--one_key_move.start()
+
+--local launch = require("modules.launch")
+--launch.start()
+
 --local right_mouse_button_simulates_right = require("modules.right_mouse_button_simulates_right")
 --right_mouse_button_simulates_right.start()
 
@@ -48,5 +48,5 @@ hotkeys.start()
 --local browse_pictures = require("modules.browse_pictures")
 --browse_pictures.start()
 
-local self = require("modules.self")
-self.start()
+-- local self = require("modules.self")
+-- self.start()
