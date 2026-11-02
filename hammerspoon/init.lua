@@ -13,9 +13,6 @@ window_expand.start()
 local window_move = require("modules.window_move")
 window_move.start()
 
---local desktop_show = require("modules.desktop_show")
---desktop_show.start()
-
 local clipboard_stack = require("modules.clipboard_stack")
 clipboard_stack.start()
 
