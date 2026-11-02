@@ -42,9 +42,6 @@ memo.start()
 local mouse_lock = require("modules.mouse_lock")
 mouse_lock.start()
 
---local chatgpt = require("modules.chatgpt")
---chatgpt.start()
-
 local create_txt = require("modules.create_txt_file")
 create_txt.start()
 
