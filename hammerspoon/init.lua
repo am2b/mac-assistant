@@ -27,9 +27,6 @@ clipboard_stack.start()
 --local send_clipboard_to_telegram = require("modules.send_clipboard_to_telegram")
 --send_clipboard_to_telegram.start()
 
---local finder_trash = require("modules.finder")
---finder_trash.start()
-
 --local one_key_move = require("modules.one_key_move")
 --one_key_move.start()
 
